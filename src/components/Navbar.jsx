@@ -7,18 +7,18 @@ import { logout } from '../redux/features/auth/authSlice'
 
 const Navbar = () => {
 
-  // const isAuth = useSelector( checkIsAuth )
+  const isAuth = useSelector( checkIsAuth )
   // const dispatch = useDispatch()
 
   const activeStyle = {
     color: 'white'
   }
 
-  const logoutHandler = () => {
-    dispatch ( logout() )
-    window.localStorage.removeItem('token')
-    toast('Вы вышли из системы')
-  }
+  // const logoutHandler = () => {
+  //   dispatch ( logout() )
+  //   window.localStorage.removeItem('token')
+  //   toast('Вы вышли из системы')
+  // }
 
   return (
     <div className='flex py-4 justify-between items-center'>
@@ -59,7 +59,7 @@ const Navbar = () => {
       </ul>)}
 
       <div className='flex justify-center item-center bg-gray-600 text-xs text-white rounded-sm px-4 py-2'>
-        {isAuth ? <button onClick={logoutHandler} >Выйти</button> : <Link to={'/login'}>войти</Link>}
+        {/* {isAuth ? <button onClick={logoutHandler} >Выйти</button> : <Link to={'/login'}>войти</Link>} */}
       </div>
 
     </div>
