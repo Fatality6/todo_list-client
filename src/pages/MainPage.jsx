@@ -19,11 +19,11 @@ export const MainPage = () => {
 
   //pagination
   const tasksPerPage = 3;
-  const totalPages = Math.ceil(taskArr.length / tasksPerPage);
+  const totalPages = Math.ceil(taskArr?.length / tasksPerPage);
   const [currentPage, setCurrentPage] = useState(1);
   const startIndex = (currentPage - 1) * tasksPerPage;
   const endIndex = startIndex + tasksPerPage;
-  const tasksToDisplay = taskArr.slice(startIndex, endIndex);
+  const tasksToDisplay = taskArr?.slice(startIndex, endIndex);
 
   return (
     <div className="flex flex-col justify-center items-center gap-10 flex-wrap">
@@ -41,7 +41,7 @@ export const MainPage = () => {
         <option value="in_progress_first">Сначала в процессе</option>
       </select>
       <div className="flex justify-center items-center gap-6 flex-wrap">
-        {tasksToDisplay.map((el) => {
+        {tasksToDisplay?.map((el) => {
           return (
             <TaskItem
               key={el._id}
